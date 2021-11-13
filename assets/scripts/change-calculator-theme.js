@@ -1,0 +1,1 @@
+/* Script para alterar o tema da Calculadora */
