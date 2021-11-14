@@ -12,16 +12,16 @@ for (var i = 0; i < buttons.length; i++) {
             display.innerHTML = '';
             decimalButtonState = false;
         } else if (btnVal == '=') {
-            var equation = inputVal;
-            var lastChar = equation[equation.length - 1];
+            var operatorSolution = inputVal;
+            var lastChar = operatorSolution[operatorSolution.length - 1];
 
-            equation = equation.replace(/x/g, '*').replace(/÷/g, '/');
+            operatorSolution = operatorSolution.replace(/x/g, '*').replace(/÷/g, '/');
 
             if (operators.indexOf(lastChar) > -1 || lastChar == '.')
-                equation = equation.replace(/.$/, '');
+                operatorSolution = operatorSolution.replace(/.$/, '');
 
-            if (equation)
-                display.innerHTML = eval(equation);
+            if (operatorSolution)
+                display.innerHTML = eval(operatorSolution);
 
             decimalButtonState = false;
         } else if (operators.indexOf(btnVal) > -1) {
