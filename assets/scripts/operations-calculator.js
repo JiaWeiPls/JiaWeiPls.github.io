@@ -1,16 +1,16 @@
-var keys = document.querySelectorAll('span');
+var buttons = document.querySelectorAll('span');
 var operators = ['+', '-', 'x', '÷'];
-var decimalAdded = false;
+var decimalButtonState = false;
 
-for (var i = 0; i < keys.length; i++) {
-    keys[i].onclick = function(e) {
-        var input = document.querySelector('.display');
-        var inputVal = input.innerHTML;
+for (var i = 0; i < buttons.length; i++) {
+    buttons[i].onclick = function(preventPageChange) {
+        var display = document.querySelector('.display');
+        var inputVal = display.innerHTML;
         var btnVal = this.innerHTML;
 
         if (btnVal == 'C') {
-            input.innerHTML = '';
-            decimalAdded = false;
+            display.innerHTML = '';
+            decimalButtonState = false;
         } else if (btnVal == '=') {
             var equation = inputVal;
             var lastChar = equation[equation.length - 1];
@@ -21,34 +21,34 @@ for (var i = 0; i < keys.length; i++) {
                 equation = equation.replace(/.$/, '');
 
             if (equation)
-                input.innerHTML = eval(equation);
+                display.innerHTML = eval(equation);
 
-            decimalAdded = false;
+            decimalButtonState = false;
         } else if (operators.indexOf(btnVal) > -1) {
             var lastChar = inputVal[inputVal.length - 1];
 
             if (inputVal != '' && operators.indexOf(lastChar) == -1)
-                input.innerHTML += btnVal;
+                display.innerHTML += btnVal;
 
             else if (inputVal == '' && btnVal == '-')
-                input.innerHTML += btnVal;
+                display.innerHTML += btnVal;
 
 
             if (operators.indexOf(lastChar) > -1 && inputVal.length > 1) {
-                input.innerHTML = inputVal.replace(/.$/, btnVal);
+                display.innerHTML = inputVal.replace(/.$/, btnVal);
             }
 
-            decimalAdded = false;
+            decimalButtonState = false;
         } else if (btnVal == '.') {
-            if (!decimalAdded) {
-                input.innerHTML += btnVal;
-                decimalAdded = true;
+            if (!decimalButtonState) {
+                display.innerHTML += btnVal;
+                decimalButtonState = true;
             }
         } else {
-            input.innerHTML += btnVal;
+            display.innerHTML += btnVal;
         }
 
         // prevent page jumps
-        e.preventDefault();
+        preventPageChange.preventDefault();
     }
 }
