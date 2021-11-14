@@ -1,9 +1,9 @@
-let somar;
-let subtrair;
-let dividir;
-let multiplicar;
+let add;
+let subtract;
+let division;
+let multiplication;
 
-console.log(somar);
-console.log(subtrair);
-console.log(dividir);
-console.log(multiplicar);
+console.log(add);
+console.log(subtract);
+console.log(division);
+console.log(multiplication);
