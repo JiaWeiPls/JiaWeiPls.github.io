@@ -1,33 +1,54 @@
-let display = document.querySelector(".display");
+var keys = document.querySelectorAll('span');
+var operators = ['+', '-', 'x', '÷'];
+var decimalAdded = false;
 
-let c = document.querySelector(".c");
-let signed = document.querySelector(".signed");
-let percent = document.querySelector(".percent");
-let decimal = document.querySelector(".decimal");
+for (var i = 0; i < keys.length; i++) {
+    keys[i].onclick = function(e) {
+        var input = document.querySelector('.display');
+        var inputVal = input.innerHTML;
+        var btnVal = this.innerHTML;
+
+        if (btnVal == 'C') {
+            input.innerHTML = '';
+            decimalAdded = false;
+        } else if (btnVal == '=') {
+            var equation = inputVal;
+            var lastChar = equation[equation.length - 1];
+
+            equation = equation.replace(/x/g, '*').replace(/÷/g, '/');
+
+            if (operators.indexOf(lastChar) > -1 || lastChar == '.')
+                equation = equation.replace(/.$/, '');
+
+            if (equation)
+                input.innerHTML = eval(equation);
+
+            decimalAdded = false;
+        } else if (operators.indexOf(btnVal) > -1) {
+            var lastChar = inputVal[inputVal.length - 1];
+
+            if (inputVal != '' && operators.indexOf(lastChar) == -1)
+                input.innerHTML += btnVal;
+
+            else if (inputVal == '' && btnVal == '-')
+                input.innerHTML += btnVal;
 
 
-let multiplication = document.querySelector(".times");
-let division = document.querySelector(".divide");
-let addition = document.querySelector(".plus");
-let subtraction = document.querySelector(".minus");
-let equals = document.querySelector(".equals");
+            if (operators.indexOf(lastChar) > -1 && inputVal.length > 1) {
+                input.innerHTML = inputVal.replace(/.$/, btnVal);
+            }
 
-let zero = document.querySelector(".zero");
-let one = document.querySelector(".one");
-let two = document.querySelector(".two");
-let three = document.querySelector(".three");
-let four = document.querySelector(".four");
-let five = document.querySelector(".five");
-let six = document.querySelector(".six");
-let seven = document.querySelector(".seven");
-let eight = document.querySelector(".eight");
-let nine = document.querySelector(".nine");
+            decimalAdded = false;
+        } else if (btnVal == '.') {
+            if (!decimalAdded) {
+                input.innerHTML += btnVal;
+                decimalAdded = true;
+            }
+        } else {
+            input.innerHTML += btnVal;
+        }
 
-
-
-
-console.log(multiplication);
-console.log(division);
-console.log(addition);
-console.log(subtract);
-console.log(equals);
+        // prevent page jumps
+        e.preventDefault();
+    }
+}
