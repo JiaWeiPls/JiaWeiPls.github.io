@@ -1,2 +1,2 @@
-# Simple Web Calculator
-x / + -
+# Web Calculator v0.0.2
+
