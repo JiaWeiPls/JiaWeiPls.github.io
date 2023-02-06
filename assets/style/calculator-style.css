@@ -61,7 +61,6 @@ body {
 
 body {
 	font-family: "Odibee Sans";
-	font-size: 16px;
 	margin: 0;
 }
 
@@ -80,27 +79,23 @@ body {
 .calculator {
 	box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(7, 1fr);
 	grid-template-areas: "toggle toggle toggle toggle" "display display display display" "c signed percent divide" "seven eight nine times" "four five six minus" "one two three plus" "zero zero decimal equals";
-	align-items: center;
-	justify-items: center;
-	grid-row-gap: 25px;
-	grid-column-gap: 25px;
+	place-content: center;
+	gap: 25px;
 	border-radius: 20px;
 	padding: 50px 40px 40px 40px;
 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 
 	width: 95%;
 	/* Largura que vc quer, mais o padding lateral 40 + 40 */
 	max-width: calc(315px + 80px);
 }
-
-
 
 .c,
 .signed,
@@ -124,7 +119,9 @@ body {
 	text-align: center;
 	height: 60px;
 	width: 60px;
-	line-height: 60px;
+
+	display: grid;
+	place-content: center;
 }
 
 .zero {
@@ -292,8 +289,7 @@ input:checked + .slider:before {
 @media (max-width: 425px) {
 	.calculator {
 		padding: 25px 20px 20px 20px;
-		grid-row-gap: 15px;
-		grid-column-gap: 15px;
+		gap: 15px;
 	}
 
 	.c,
@@ -316,7 +312,5 @@ input:checked + .slider:before {
 	.equals {
 		height: 70px;
 		width: 70px;
-		line-height: 70px;
 	}
-
 }
