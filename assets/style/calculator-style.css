@@ -10,7 +10,7 @@
 }
 
 [data-theme="dark"] {
-    --body-bg-color: #181818;
+	--body-bg-color: #181818;
 	--bg-color: #131419;
 	--primary-font-color: #c7c7c7;
 	--secondary-font-color: #03a9f4;
@@ -46,7 +46,7 @@ body {
 	border-radius: 50%;
 	transition: 0.1s all ease-in-out;
 	border: 1px solid var(--soft-high-light);
-    cursor: pointer;
+	cursor: pointer;
 }
 
 .neumorphic:hover {
@@ -60,10 +60,6 @@ body {
 */
 
 body {
-	display: grid;
-	height: 100vh;
-	align-items: center;
-	justify-items: center;
 	font-family: "Odibee Sans";
 	font-size: 16px;
 	margin: 0;
@@ -93,6 +89,11 @@ body {
 	grid-column-gap: 25px;
 	border-radius: 20px;
 	padding: 50px 40px 40px 40px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .c,
