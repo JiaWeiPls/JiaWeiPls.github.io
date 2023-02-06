@@ -94,6 +94,16 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+	width: 95%;
+	/* Largura que vc quer, mais o padding lateral 40 + 40 */
+	max-width: calc(315px + 80px);
+}
+
+@media (max-width: 425px) {
+	.calculator {
+		padding: 25px 20px 20px 20px;
+	}
 }
 
 .c,
