@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Odibee+Sans&display=swap");
+
 :root {
     --body-bg-color: #e0e5ec;
     --bg-color: #e0e5ec;
@@ -80,7 +81,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "toggle toggle toggle toggle" "display display display display" "c signed percent divide" "seven eight nine times" "four five six minus" "one two three plus" "zero zero decimal equals";
+    grid-template-areas: "toggle toggle toggle toggle""display display display display""c signed percent divide""seven eight nine times""four five six minus""one two three plus""zero zero decimal equals";
     align-items: center;
     justify-items: center;
     grid-row-gap: 25px;
