@@ -100,11 +100,7 @@ body {
 	max-width: calc(315px + 80px);
 }
 
-@media (max-width: 425px) {
-	.calculator {
-		padding: 25px 20px 20px 20px;
-	}
-}
+
 
 .c,
 .signed,
@@ -291,4 +287,36 @@ input:checked + .slider:before {
 
 .slider.round:before {
 	border-radius: 50%;
+}
+
+@media (max-width: 425px) {
+	.calculator {
+		padding: 25px 20px 20px 20px;
+		grid-row-gap: 15px;
+		grid-column-gap: 15px;
+	}
+
+	.c,
+	.signed,
+	.percent,
+	.divide,
+	.seven,
+	.eight,
+	.nine,
+	.times,
+	.four,
+	.five,
+	.six,
+	.minus,
+	.one,
+	.two,
+	.three,
+	.plus,
+	.decimal,
+	.equals {
+		height: 70px;
+		width: 70px;
+		line-height: 70px;
+	}
+
 }
