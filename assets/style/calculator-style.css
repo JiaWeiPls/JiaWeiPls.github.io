@@ -79,7 +79,7 @@ body {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: repeat(7, 1fr);
-	grid-template-areas: "toggle toggle toggle toggle" "display display display display" "c signed percent divide" "seven eight nine times" "four five six minus" "one two three plus" "zero zero decimal equals";
+	grid-template-areas: "toggle toggle toggle toggle""display display display display""c signed percent divide""seven eight nine times""four five six minus""one two three plus""zero zero decimal equals";
 	place-content: center;
 	gap: 25px;
 	border-radius: 20px;
@@ -260,7 +260,7 @@ body {
 	width: 22px;
 }
 
-input:checked + .slider {
+input:checked+.slider {
 	background-color: var(--bg-color);
 	box-shadow: 6px 6px 16px 0 var(--dark-high-light),
 		-6px -6px 16px 0 var(--soft-high-light),
@@ -268,11 +268,11 @@ input:checked + .slider {
 		inset -6px -6px 5px 0 var(--soft-high-light);
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
 	background-color: var(--secondary-font-color);
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
 	transform: translateX(26px);
 }
 
