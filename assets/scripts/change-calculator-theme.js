@@ -6,9 +6,9 @@ const themeChanger = document.querySelector(
 
 function changeCalculatorTheme(data) {
   if (data.target.checked) {
-    document.documentElement.setAttribute("data-theme", "light");
-  } else {
     document.documentElement.setAttribute("data-theme", "dark");
+  } else {
+    document.documentElement.setAttribute("data-theme", "light");
   }
 }
 
